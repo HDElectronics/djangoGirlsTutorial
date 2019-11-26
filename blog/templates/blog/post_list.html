@@ -1,24 +1,29 @@
 <html>
+    
     <head>
         <title>Django Girls blog</title>
     </head>
+    
     <body>
+        
         <div>
-            <h1><a href="/">Django Girls Blog</a></h1>
+            <h1>Django Girls Blog</h1>
         </div>
 
-        <div>
-            <p>published: 11/26/2019, 16:00</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Hello, It's my first blog im learning Django and 
-            HTML until now and then I'll probably use CSS to
-        beautify my website and why not use JQuery of JS</p>
-        </div>
 
         <div>
-            <p>published: 11/26/2019, 16:30</p>
-            <h2><a href="">My second post</a></h2>
-            <p>This tutorial made me want to become a web developer.</p>
+            <h2> Posts on my blog </h2>
         </div>
+
+        
+        {% for post in posts %}
+        <div>
+            <p> {{post.published_date}} </p>
+            <h3><a href=""> {{post.title}} </a></h3>
+            <p> {{post.text}} </p>
+        </div>
+        {% endfor %}
+        
     </body>
+
 </html>
